@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: short-app
+spec:
+  # Важно связать selector c label pod
+  selector: 
+    components: frontend
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 80
+    nodePort: 31200 
