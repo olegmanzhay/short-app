@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: short-app-deployment
-  namespace: short-app
 spec:
   replicas: 1
   # Тут происходит связь Deployment c pod (по lables, которые указаны в template pod)

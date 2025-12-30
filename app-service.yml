@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: short-app-clusterip
+spec:
+  selector:
+    components: frontend
+  ports:
+    # Можно не указывать название, но если указать, то можно прокинуть его в ingress без указания порта в явном виде
+  - name: "80-tcp" 
+    # порт который   открыт в приложении на подах
+    port: 80
+    protocol: TCP
+  type: ClusterIP
